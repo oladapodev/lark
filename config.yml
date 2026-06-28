@@ -1,0 +1,27 @@
+baseURL: https://lark-docs.pages.dev
+languageCode: en
+title: Lark
+theme: []
+enableInlineShortcodes: true
+
+params:
+  homepage: https://lark-docs.pages.dev
+  current_version: 0.1.0
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: colorful
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+
+buildDrafts: true
+buildFuture: true
+enableRobotsTXT: true
+disableKinds: ["404", "taxonomy", "RSS"]
+
+publishDir: public

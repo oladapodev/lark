@@ -1,0 +1,35 @@
+:root {
+    --shiki-foreground: #e1e4e8;
+    --shiki-background: #24292e;
+    --shiki-token-constant: var(--color-shiki-fg-brand);
+    --shiki-token-string: var(--color-shiki-fg-brand-subtle);
+    --shiki-token-comment: #6a737d;
+    --shiki-token-keyword: #f97583;
+    --shiki-token-parameter: #e1e4e8;
+    --shiki-token-function: #b392f0;
+    --shiki-token-string-expression: var(--color-shiki-fg-brand);
+    --shiki-token-punctuation: #e1e4e8;
+    --shiki-token-link: var(--color-shiki-fg-brand);
+}
+
+#mainContent > h2:first-child { @apply mt-0; }
+#mainContent > h2 { @apply mt-8 mb-4 text-2xl font-medium text-heading dark:text-white; }
+#mainContent > h3,
+#mainContent > h4 { @apply mt-8 mb-4 text-xl font-medium text-heading dark:text-white; }
+#mainContent > p { @apply mb-4 text-base font-normal text-body; }
+#mainContent > p > a,
+#mainContent > ul > li > a,
+#mainContent > ol > li > a { @apply font-medium text-body underline decoration-1 underline-offset-2 decoration-fg-brand; }
+#mainContent > p > a:hover,
+#mainContent > ul > li > a:hover,
+#mainContent > ol > li > a:hover { @apply text-heading decoration-2 dark:text-white; }
+#mainContent > p > code,
+#mainContent > ul > li > code,
+#mainContent > ol > li > code { @apply px-2 mx-1 py-1 rounded-base bg-neutral-tertiary-soft font-mono text-sm text-fg-brand break-all inline-block; }
+#mainContent > ul { list-style: disc; }
+#mainContent > ol { list-style: decimal; }
+
+#TableOfContents > ul { @apply overflow-x-hidden font-medium; }
+#TableOfContents > ul > li { @apply py-2; }
+#TableOfContents > ul > li > a { @apply block pl-2.5 font-medium border-l text-body hover:text-heading border-transparent duration-200 transition-none hover:border-default after:content-['#'] after:text-fg-brand after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100; }
+#TableOfContents > ul > li > ul > li > a { @apply pl-6 border-l border-transparent duration-200 text-body hover:text-heading transition-none hover:border-default after:content-['#'] after:text-fg-brand after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100; }

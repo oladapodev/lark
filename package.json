@@ -1,0 +1,15 @@
+{
+  "name": "lark-docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "hugo server -D",
+    "build": "hugo",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "hugo-extended": "^0.145.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

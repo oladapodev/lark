@@ -1,0 +1,19 @@
+:root {
+  --color-brand: #3b82f6;
+  --color-brand-strong: #2563eb;
+  --color-brand-soft: #eff6ff;
+  --color-brand-subtle: #dbeafe;
+  --color-fg-brand: #1d4ed8;
+  --color-shiki-fg-brand: #79b8ff;
+  --color-shiki-fg-brand-subtle: #9ecbff;
+}
+
+[data-theme="midnight"] {
+  --color-brand: #60a5fa;
+  --color-brand-strong: #3b82f6;
+  --color-brand-soft: #0f172a;
+  --color-brand-subtle: #1e293b;
+  --color-fg-brand: #93c5fd;
+  --color-shiki-fg-brand: #79b8ff;
+  --color-shiki-fg-brand-subtle: #9ecbff;
+}

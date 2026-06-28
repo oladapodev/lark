@@ -1,0 +1,20 @@
+- title: Getting started
+  slug: getting-started
+  pages:
+    - title: Introduction
+    - title: Quickstart
+    - title: Installation
+
+- title: Components
+  slug: components
+  pages:
+    - title: Button
+    - title: Alert
+    - title: Card
+    - title: Modal
+
+- title: API Reference
+  slug: api
+  pages:
+    - title: Overview
+    - title: Authentication
