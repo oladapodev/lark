@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ partial "navbar" }}
+
+<div class="w-full px-4 lg:px-0 mx-auto max-w-8xl">
+  <div class="lg:flex">
+    <div class="h-[calc(100vh-4rem)] overflow-y-auto px-4 py-6">
+        {{ partial "sidebar" . }}
+      </div>
+    <div class="fixed inset-0 z-10 hidden bg-dark/50 dark:bg-dark/60" id="sidebarBackdrop"></div>
+
+    <main id="content-wrapper" class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible lg:pt-0 mt-32 xl:mt-30">
+      <div class="lg:px-8 xl:pb-24 py-8 lg:pb-16">
+        <div id="introContent" class="border-b border-border-default py-8">
+          <h1 class="inline-block mb-3 text-3xl font-semibold tracking-tight text-heading" id="content">{{ .Title | markdownify }}</h1>
+          {{ with .Page.Params.Description }}
+          <p class="text-lg text-body">{{ . | markdownify }}</p>
+          {{ end }}
+        </div>
+        <div id="mainContent" class="py-8">
+          {{ .Content }}
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+{{ end }}

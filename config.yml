@@ -1,12 +1,14 @@
-baseURL: https://lark-docs.pages.dev
+baseURL: https://lark-docs.pages.dev/
 languageCode: en
 title: Lark
 theme: []
-enableInlineShortcodes: true
+defaultContentLanguage: en
 
 params:
   homepage: https://lark-docs.pages.dev
-  current_version: 0.1.0
+  description: The open-source docs platform that looks better than Mintlify.
+  authors:
+    - name: David Oladapo
 
 markup:
   goldmark:
@@ -23,5 +25,3 @@ buildDrafts: true
 buildFuture: true
 enableRobotsTXT: true
 disableKinds: ["404", "taxonomy", "RSS"]
-
-publishDir: public

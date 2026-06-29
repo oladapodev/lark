@@ -1,12 +1,11 @@
 {{ define "main" }}
 {{ partial "navbar" }}
 
-<div class="w-full px-4 lg:px-0 mx-auto max-w-8xl border-s border-e border-border-default">
+<div class="w-full px-4 lg:px-0 mx-auto max-w-8xl">
   <div class="lg:flex">
-    <!-- Sidebar -->
     <div class="h-[calc(100vh-4rem)] overflow-y-auto px-4 py-6">
-      {{ partial "sidebar" . }}
-    </div>
+        {{ partial "sidebar" . }}
+      </div>
     <div class="fixed inset-0 z-10 hidden bg-dark/50 dark:bg-dark/60" id="sidebarBackdrop"></div>
 
     <main id="content-wrapper" class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible lg:pt-0 mt-32 xl:mt-30">
@@ -14,8 +13,8 @@
         <div class="flex-auto max-w-full min-w-0">
           <div id="introContent" class="border-b border-border-default py-8 lg:px-8">
             <h1 class="inline-block mb-3 text-3xl font-semibold tracking-tight text-heading" id="content">{{ .Title | markdownify }}</h1>
-            {{ if .Page.Params.Description }}
-            <p class="text-lg text-body">{{ .Page.Params.Description | markdownify }}</p>
+            {{ with .Page.Params.Description }}
+            <p class="text-lg text-body">{{ . | markdownify }}</p>
             {{ end }}
           </div>
 
@@ -39,7 +38,6 @@
           </div>
         </div>
 
-        <!-- Table of content -->
         <div class="hidden w-64 flex-none px-4 lg:ps-8 xl:block">
           {{ if (eq .Page.Params.toc true) }}
           <div id="toc" class="flex overflow-y-auto sticky top-28 flex-col justify-between pt-10 pb-6 h-[calc(100vh-5rem)]">

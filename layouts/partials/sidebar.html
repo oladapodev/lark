@@ -1,49 +1,12 @@
-<div id="navWrapper" class="overflow-y-auto z-20 xl:z-10 px-2 md:px-6 mt-16 md:mt-12 h-full bg-neutral-primary sm:bg-transparent scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28 lg:mr-0">
-  <nav id="nav" class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20" aria-label="Docs navigation">
-    {{- $url := split .Permalink "/" -}}
-    {{- $page_slug := index $url (sub (len $url) 2) -}}
+<aside id="sidebar" class="fixed inset-y-0 start-0 z-30 hidden h-screen w-72 border-e border-border-default bg-neutral-primary transition-transform lg:start-auto lg:static lg:z-0 lg:h-auto lg:w-64 lg:translate-x-0 lg:block" aria-labelledby="sidebar-label">
+  <div class="flex h-16 items-center border-b border-border-default px-6 lg:hidden">
+    <a href="/" class="flex items-center gap-2">
+      <svg class="h-5 w-5 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <span class="text-lg font-bold text-heading">Lark</span>
+    </a>
+  </div>
 
-    <ul class="mb-0 list-unstyled">
-    {{- range $group := .Site.Data.sidebar -}}
-      {{- $link := $group.title -}}
-      {{- $link_slug := $link | urlize -}}
-
-      {{- if $group.pages -}}
-        {{- $link = index $group.pages 0 -}}
-        {{- $link_slug = $link.title | urlize -}}
-      {{- end -}}
-
-      {{- $group_slug := $group.slug -}}
-      {{- $is_active_group := eq $.Page.Params.group $group_slug -}}
-
-      {{- if $group.pages }}
-        <li class="mt-8">
-          <h5 class="mb-2 font-medium tracking-widest uppercase text-xs text-heading">{{ $group.title }}</h5>
-          <ul class="py-1 list-unstyled">
-            {{- range $doc := $group.pages -}}
-              {{- $doc_slug := "" -}}
-              {{- if $doc.slug -}}
-                {{- $doc_slug = $doc.slug -}}
-              {{- else -}}
-                {{- $doc_slug = $doc.title | urlize -}}
-              {{- end -}}
-              {{- $is_active := and $is_active_group (eq $page_slug $doc_slug) -}}
-              {{- $href := printf "/%s/%s/" $group_slug $doc_slug }}
-              <li>
-                <a href="{{ $href }}" data-sidebar-item class="py-2 transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-heading text-body {{ if $is_active }} !text-fg-brand hover:!text-fg-brand-strong{{ end }}"{{ if $is_active }} aria-current="page"{{ end }}>{{ $doc.title }} {{ if ( eq $doc.new true) }}<span><span class="ml-2 bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1 py-0.5 rounded">New</span></span>{{ end }}</a>
-              </li>
-            {{- end }}
-          </ul>
-        </li>
-      {{- else }}
-        <li class="mx-4 my-3 border-top"></li>
-        <li>
-          <a href="/{{ $group_slug }}/" data-sidebar-item class="d-inline-flex align-items-center {{ if $is_active_group }} active{{ end }}"{{ if $is_active_group }} aria-current="page"{{ end }}>
-            {{ $group.title }}
-          </a>
-        </li>
-      {{- end }}
-    {{- end }}
-    </ul>
-  </nav>
-</div>
+  <div class="h-[calc(100vh-4rem)] overflow-y-auto px-4 py-6">
+    {{ partial "sidebar" . }}
+  </div>
+</aside>

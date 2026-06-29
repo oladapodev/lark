@@ -1,18 +1,36 @@
-<footer class="bg-neutral-primary border-t border-light-subtle bg-linear-to-t from-0% dark:from-brand/8 from-neutral-tertiary to-[24rem] to-primary">
-    <div class="border-b border-light-subtle">
-        <div class="w-full mx-auto max-w-8xl border-s border-e border-light-subtle">
-            <div class="grid gap-12 xl:grid-cols-6 xl:gap-24 px-6 xl:pt-18 py-12">
-                <div class="col-span-2">
-                    <a href="/" class="flex mb-5">
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white leading-none">Lark</span>
-                      </a>
-                    <p class="max-w-lg mb-3 text-body leading-relaxed">Modern documentation, built for developers who care about design and speed.</p>
-                    <p class="max-w-lg text-body">Docs platform better than Mintlify. Open source. Self-hostable.</p>
-                </div>
-            </div>
+<footer class="border-t border-border-default bg-neutral-primary">
+  <div class="mx-auto max-w-8xl px-4 py-12 lg:px-0">
+    <div class="grid grid-cols-2 gap-8 lg:grid-cols-6">
+      <div class="col-span-2">
+        <a href="/" class="flex items-center gap-2.5">
+          <svg class="h-6 w-6 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span class="text-lg font-bold text-heading dark:text-white">Lark</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm text-body">The open-source docs platform that actually looks good. Built with Hugo + Tailwind CSS.</p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://github.com/oladapodev/lark" target="_blank" rel="noopener" class="text-body hover:text-heading">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+          </a>
         </div>
+      </div>
+      <div>
+        <h3 class="mb-3 text-sm font-semibold text-heading">Resources</h3>
+        <ul class="space-y-2 text-sm text-body">
+          <li><a href="/getting-started/introduction/" class="hover:text-heading">Documentation</a></li>
+          <li><a href="/components/button/" class="hover:text-heading">Components</a></li>
+          <li><a href="/api/overview/" class="hover:text-heading">API Reference</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-3 text-sm font-semibold text-heading">Community</h3>
+        <ul class="space-y-2 text-sm text-body">
+          <li><a href="https://github.com/oladapodev/lark/discussions" target="_blank" rel="noopener" class="hover:text-heading">GitHub Discussions</a></li>
+          <li><a href="https://discord.gg/example" target="_blank" rel="noopener" class="hover:text-heading">Discord</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="w-full mx-auto max-w-8xl border-s border-e border-light-subtle px-6 py-12">
-        <span class="block text-center text-body text-sm font-normal">© <span id="currentYear"></span> <a href="/" class="hover:underline">Lark™</a>. All rights reserved.</span>
+    <div class="mt-12 border-t border-border-default pt-8 text-center text-sm text-body">
+      <p>Released under the MIT License. Docs built with Hugo + Tailwind CSS.</p>
     </div>
+  </div>
 </footer>

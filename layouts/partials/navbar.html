@@ -1,25 +1,34 @@
-<header class="fixed top-0 z-40 flex-none w-full mx-auto bg-neutral-primary border-b border-light-subtle">
-  <div class="flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl xl:px-0">
-    <div class="flex items-center">
-      <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar" class="block me-3 text-body rounded-sm cursor-pointer lg:hidden hover:text-heading hover:bg-neutral-secondary focus:ring-2 focus:ring-neutral-quaternary">
-        <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        <svg id="toggleSidebarMobileClose" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      </button>
-      <a href="/" class="flex me-3">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white leading-none">Lark</span>
-      </a>
-    </div>
+<header class="fixed top-0 z-40 w-full border-b border-border-default bg-neutral-primary/80 backdrop-blur-md">
+  <div class="mx-auto max-w-8xl px-4 lg:px-0">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-body hover:bg-neutral-secondary-soft hover:text-heading focus:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary lg:hidden">
+          <svg id="toggleSidebarMobileHamburger" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="toggleSidebarMobileClose" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="/" class="flex items-center gap-2.5 ltr:ml-2 rtl:mr-2 lg:ltr:ml-0 lg:rtl:mr-0">
+          <svg class="h-6 w-6 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span class="text-xl font-bold text-heading dark:text-white">Lark</span>
+        </a>
+      </div>
 
-    <div class="flex items-center">
-      <button id="theme-toggle" type="button" class="inline-flex hover:text-heading items-center justify-center text-body w-10 h-10 hover:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary rounded-xl text-sm p-2.5">
-        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z"/></svg>
-        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M5 12H3m18 0h-2M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
-        <span class="sr-only">Toggle dark mode</span>
-      </button>
-      <button id="theme-select" type="button" class="inline-flex hover:text-heading items-center justify-center text-body w-10 h-10 hover:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary rounded-xl text-sm p-2.5">
-        <svg class="w-4.5 h-4.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"/></svg>
-        <span class="sr-only">Select theme</span>
-      </button>
+      <div class="flex items-center gap-1">
+        <a href="https://github.com/oladapodev/lark" target="_blank" rel="noopener" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-body hover:bg-neutral-secondary-soft hover:text-heading focus:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+          <span class="sr-only">GitHub</span>
+        </a>
+
+        <button id="theme-toggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-body hover:bg-neutral-secondary-soft hover:text-heading focus:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+          <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <span class="sr-only">Toggle dark mode</span>
+        </button>
+
+        <button id="themeCustomizerOpen" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-body hover:bg-neutral-secondary-soft hover:text-heading focus:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          <span class="sr-only">Customize theme</span>
+        </button>
+      </div>
     </div>
   </div>
 </header>

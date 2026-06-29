@@ -5,6 +5,8 @@
   "scripts": {
     "start": "hugo server -D",
     "build": "hugo",
+    "css": "npx @tailwindcss/cli -i src/main.css -o static/main.css --watch",
+    "css:build": "npx @tailwindcss/cli -i src/main.css -o static/main.css --minify",
     "deploy": "./scripts/deploy.sh"
   },
   "devDependencies": {

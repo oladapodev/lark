@@ -1,0 +1,12 @@
+<div class="example-block">
+  <div class="example-tabs">
+    <button class="example-tab active" data-tab="preview-{{ .Get 0 }}">Preview</button>
+    <button class="example-tab" data-tab="code-{{ .Get 0 }}">Code</button>
+  </div>
+  <div id="preview-{{ .Get 0 }}" class="example-preview p-6">
+    {{ .Inner | markdownify }}
+  </div>
+  <div id="code-{{ .Get 0 }}" class="example-code hidden">
+    <pre><code>{{ .Inner | htmlEscape }}</code></pre>
+  </div>
+</div>

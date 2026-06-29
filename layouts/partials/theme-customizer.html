@@ -1,0 +1,50 @@
+<div class="theme-customizer">
+  <button id="themeCustomizerToggle" type="button" class="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg hover:bg-brand-strong focus:ring-2 focus:ring-brand/50 focus:outline-none">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+    <span class="sr-only">Customize theme</span>
+  </button>
+  <div id="themeCustomizerPanel" class="theme-customizer-panel hidden">
+    <div class="mb-4 flex items-center justify-between">
+      <h3 class="text-base font-semibold text-heading">Customize theme</h3>
+      <button id="themeCustomizerClose" class="text-body hover:text-heading">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="mb-4">
+      <label class="mb-2 block text-sm font-medium text-body">Brand color</label>
+      <div class="flex flex-wrap gap-2">
+        <button data-brand="#3b82f6" class="color-option selected" style="background:#3b82f6" aria-label="Blue"></button>
+        <button data-brand="#8b5cf6" class="color-option" style="background:#8b5cf6" aria-label="Purple"></button>
+        <button data-brand="#06b6d4" class="color-option" style="background:#06b6d4" aria-label="Cyan"></button>
+        <button data-brand="#10b981" class="color-option" style="background:#10b981" aria-label="Green"></button>
+        <button data-brand="#f59e0b" class="color-option" style="background:#f59e0b" aria-label="Amber"></button>
+        <button data-brand="#ef4444" class="color-option" style="background:#ef4444" aria-label="Red"></button>
+        <button data-brand="#ec4899" class="color-option" style="background:#ec4899" aria-label="Pink"></button>
+        <button data-brand="#0f172a" class="color-option" style="background:#0f172a" aria-label="Dark"></button>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="mb-2 block text-sm font-medium text-body">Font</label>
+      <select id="themeFont" class="w-full rounded-lg border border-border-default bg-neutral-primary px-3 py-2 text-sm text-body focus:border-brand focus:ring-1 focus:ring-brand dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+        <option value="Inter">Inter (default)</option>
+        <option value="Geist">Geist</option>
+        <option value="IBM+Plex+Sans">IBM Plex Sans</option>
+        <option value="Plus+Jakarta+Sans">Plus Jakarta Sans</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label class="mb-2 block text-sm font-medium text-body">Border radius: <span id="radiusValue">0.5</span>rem</label>
+      <input id="themeRadius" type="range" min="0" max="1" step="0.125" value="0.5" class="w-full accent-brand">
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-sm font-medium text-body">Dark mode</span>
+      <button id="themeModeToggle" type="button" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:ring-2 focus:ring-brand focus:ring-offset-2 dark:bg-gray-700">
+        <span id="themeModeDot" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+      </button>
+    </div>
+  </div>
+</div>

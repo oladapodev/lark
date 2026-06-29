@@ -1,0 +1,158 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Sidebar toggle
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggleSidebarMobile');
+  const backdrop = document.getElementById('sidebarBackdrop');
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = sidebar.classList.contains('hidden');
+      if (isHidden) {
+        sidebar.classList.remove('hidden');
+        if (backdrop) backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('hidden');
+        if (backdrop) backdrop.classList.add('hidden');
+      }
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      sidebar.classList.add('hidden');
+      backdrop.classList.add('hidden');
+    });
+  }
+
+  // Theme customizer
+  const customizerToggle = document.getElementById('themeCustomizerToggle');
+  const customizerOpen = document.getElementById('themeCustomizerOpen');
+  const customizerPanel = document.getElementById('themeCustomizerPanel');
+  const customizerClose = document.getElementById('themeCustomizerClose');
+
+  const openCustomizer = () => {
+    if (customizerPanel) customizerPanel.classList.remove('hidden');
+  };
+
+  const closeCustomizer = () => {
+    if (customizerPanel) customizerPanel.classList.add('hidden');
+  };
+
+  if (customizerToggle) customizerToggle.addEventListener('click', () => customizerPanel.classList.toggle('hidden'));
+  if (customizerOpen) customizerOpen.addEventListener('click', openCustomizer);
+  if (customizerClose) customizerClose.addEventListener('click', closeCustomizer);
+
+  // Brand color picker
+  document.querySelectorAll('.color-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const color = btn.dataset.brand;
+      document.documentElement.style.setProperty('--color-brand', color);
+      
+      document.querySelectorAll('.color-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+  });
+
+  // Dark mode toggle
+  const darkToggle = document.getElementById('theme-toggle');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+  const updateDarkModeIcons = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      darkIcon?.classList.add('hidden');
+      lightIcon?.classList.remove('hidden');
+    } else {
+      darkIcon?.classList.remove('hidden');
+      lightIcon?.classList.add('hidden');
+    }
+  };
+
+  if (darkToggle) {
+    darkToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      updateDarkModeIcons();
+    });
+  }
+
+  // Font selector
+  const fontSelect = document.getElementById('themeFont');
+  if (fontSelect) {
+    fontSelect.addEventListener('change', (e) => {
+      document.documentElement.style.setProperty('--font-sans', `"${e.target.value}", system-ui, sans-serif`);
+      localStorage.setItem('css-theme-font', e.target.value);
+    });
+  }
+
+  // Radius slider
+  const radiusSlider = document.getElementById('themeRadius');
+  const radiusValue = document.getElementById('radiusValue');
+  if (radiusSlider && radiusValue) {
+    radiusSlider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      document.documentElement.style.setProperty('--radius-base', `${val}rem`);
+      radiusValue.textContent = val;
+    });
+  }
+
+  // Example tabs
+  document.querySelectorAll('.example-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      const parent = tab.closest('.example-block');
+      
+      parent.querySelectorAll('.example-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      parent.querySelectorAll('.example-preview, .example-code').forEach(el => el.classList.add('hidden'));
+      const targetEl = document.getElementById(target);
+      if (targetEl) targetEl.classList.remove('hidden');
+    });
+  });
+
+  // Copy code button
+  document.querySelectorAll('.example-block').forEach(block => {
+    const code = block.querySelector('code')?.textContent || '';
+    
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'absolute top-2 right-2 text-xs text-body hover:text-heading bg-neutral-primary-soft border border-border-default rounded px-2 py-1';
+    copyBtn.textContent = 'Copy';
+    
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(code);
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+    });
+    
+    const codeContainer = block.querySelector('.example-code');
+    if (codeContainer) {
+      codeContainer.style.position = 'relative';
+      codeContainer.appendChild(copyBtn);
+    }
+  });
+
+  // Dark mode toggle in customizer
+  const modeToggle = document.getElementById('themeModeToggle');
+  const modeDot = document.getElementById('themeModeDot');
+  
+  const updateModeToggle = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (modeDot) {
+      modeDot.style.transform = isDark ? 'translateX(1.5rem)' : 'translateX(0.25rem)';
+    }
+  };
+  
+  modeToggle?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    updateDarkModeIcons();
+    updateModeToggle();
+  });
+
+  updateDarkModeIcons();
+  updateModeToggle();
+});
+</script>
